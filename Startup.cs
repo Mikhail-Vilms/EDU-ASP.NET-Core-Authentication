@@ -31,6 +31,8 @@ namespace EDU_ASP.NET_Core_Authentication
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseAuthentication();
+
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
