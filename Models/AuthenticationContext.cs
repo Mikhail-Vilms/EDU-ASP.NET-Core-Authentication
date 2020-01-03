@@ -9,6 +9,8 @@ namespace EDU_ASP.NET_Core_Authentication.Models
         // "services.AddDbContext<AuthenticationContext" in "ConfigureServices" method 
         public AuthenticationContext(DbContextOptions options) : base(options)
         {
-        } 
+        }
+
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
     }
 }

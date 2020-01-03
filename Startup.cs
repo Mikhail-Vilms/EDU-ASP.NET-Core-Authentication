@@ -20,8 +20,12 @@ namespace EDU_ASP.NET_Core_Authentication
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
             services.AddDbContext<AuthenticationContext>(options =>
                 options.UseNpgsql(Configuration.GetConnectionString("IdentityConnection")));
+
+            services.AddIdentityCore<ApplicationUser>()
+                .AddEntityFrameworkStores<AuthenticationContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
