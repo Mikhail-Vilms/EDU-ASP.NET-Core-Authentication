@@ -23,6 +23,9 @@ namespace EDU_ASP.NET_Core_Authentication
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Injecting AppSettings
+            services.Configure<ApplicationSettings>(Configuration.GetSection("ApplicationSettings"));
+            
             services.AddControllers();
 
             services.AddDbContext<AuthenticationContext>(options =>
