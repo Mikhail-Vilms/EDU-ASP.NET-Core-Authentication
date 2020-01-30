@@ -78,6 +78,7 @@ namespace EDU_ASP.NET_Core_Authentication
 
             app.UseAuthentication();
 
+            app.UseAuthorization();
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>

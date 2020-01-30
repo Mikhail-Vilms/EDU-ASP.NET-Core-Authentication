@@ -49,7 +49,7 @@ namespace EDU_ASP.NET_Core_Authentication.Controller
 
         [HttpPost]
         [Route("Login")]
-        // POST: /api/ApplicationUser/Register
+        // POST: /api/ApplicationUser/Login
         public async Task<IActionResult> Login(LoginModel model)
         {
             var user = await _userManager.FindByNameAsync(model.UserName);
